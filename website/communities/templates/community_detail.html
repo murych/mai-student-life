@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{{ community.title }}</title>
+</head>
+<body>
+<div class='wrapper'>
+    <header>
+        <div class="container">
+            Community details
+            <p><a href="{% url 'communities:community_index' %}">List of MAI communities</a></p
+        </div>
+    </header>
+    <div class="content">
+        <div class="community">
+            <h3>{{ community.title }}</h3>
+            <p>{{ community.description }}</p>
+            <p><a href="{{ community.vk_link }}">{{ community.vk_link }}</a></p>
+            <p>{{ community.contacts }}</p>
+            <p><a href="{% url 'communities:community_detail' community.pk %}">details</a></p>
+        </div>
+    </div>
+</div>
+<footer class="push">
+    MAI COMMUNITIES
+</footer>
+</body>
+</html>
