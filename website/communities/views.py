@@ -1,19 +1,23 @@
-from django.shortcuts import render, render_to_response
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render_to_response
+
 from .models import *
-from django.template import RequestContext
-
-
-# Create your views here.
-
-def communities_list(request):
-    template_name = 'community_list.html'
-    community_list = Community.objects.all()
-    return render_to_response(template_name, {"community_list": community_list},
-                              context_instance=RequestContext(request))
 
 
 def index(request):
-    return communities_list(request)
+    return community_list(request)
+
+
+def community_list(request):
+    template_name = 'community_list.html'
+    paginator = Paginator(Community.objects.all(), 10)
+
+    try:
+        items = paginator.page(request.GET.get('page'))
+    except (PageNotAnInteger, EmptyPage):
+        items = paginator.page(1)
+
+    return render_to_response(template_name, {"community_list": items})
 
 
 def detail(request, community_id):
