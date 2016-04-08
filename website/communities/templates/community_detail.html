@@ -8,7 +8,7 @@
     <header>
         <div class="container">
             Community details
-            <p><a href="{% url 'communities:community_index' %}">List of MAI communities</a></p
+            <p><a href="{% url 'communities:community_list' %}">← List of MAI communities</a></p
         </div>
     </header>
     <div class="content">
@@ -17,7 +17,6 @@
             <p>{{ community.description }}</p>
             <p><a href="{{ community.vk_link }}">{{ community.vk_link }}</a></p>
             <p>{{ community.contacts }}</p>
-            <p><a href="{% url 'communities:community_detail' community.pk %}">details</a></p>
         </div>
     </div>
 </div>
