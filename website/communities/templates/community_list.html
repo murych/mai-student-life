@@ -1,27 +1,26 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <title>MAI COMMUNITIES</title>
+    <link rel="stylesheet" href="{% static "communities/style.css" %}" type="text/css"/>
 </head>
 <body>
-<div class='wrapper'>
-    <header>
-        <div class="container">
-            List of MAI communities
-        </div>
-    </header>
+
+<header>
+    <p>Communities</p>
+</header>
+
+<main>
     <div class="content">
         {% for community in community_list %}
             <div class="community">
-                <br/>
                 <h3><a href="{% url 'communities:community_detail' community.pk %}">{{ community.title }}</a></h3>
                 <p>{{ community.description }}</p>
-                <p><a href="{{ community.vk_link }}">{{ community.vk_link }}</a></p>
-                <p>{{ community.contacts }}</p>
-                <br/>
             </div>
         {% endfor %}
     </div>
+
     {% if community_list.paginator.num_pages > 1 %}
         <div class="pagination">
             {% if community_list.has_previous %}
@@ -41,9 +40,11 @@
             {% endif %}
         </div>
     {% endif %}
-</div>
+</main>
+
 <footer class="push">
     MAI COMMUNITIES
 </footer>
+
 </body>
 </html>

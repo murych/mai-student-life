@@ -1,27 +1,32 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <title>{{ community.title }}</title>
+    <link rel="stylesheet" href="{% static "communities/style.css" %}" type="text/css"/>
 </head>
 <body>
-<div class='wrapper'>
-    <header>
-        <div class="container">
-            Community details
-            <p><a href="{% url 'communities:community_list' %}">← List of MAI communities</a></p
-        </div>
-    </header>
+
+<header>
+    <p>
+        <a href="{% url 'communities:community_list' %}">Communities</a>
+        /
+        {{ community.title }}
+    </p>
+</header>
+
+<main>
     <div class="content">
-        <div class="community">
-            <h3>{{ community.title }}</h3>
-            <p>{{ community.description }}</p>
-            <p><a href="{{ community.vk_link }}">{{ community.vk_link }}</a></p>
-            <p>{{ community.contacts }}</p>
-        </div>
+        <h3>{{ community.title }}</h3>
+        <p>{{ community.description }}</p>
+        <p><a href="{{ community.vk_link }}">{{ community.vk_link }}</a></p>
+        <p>{{ community.contacts }}</p>
     </div>
-</div>
+</main>
+
 <footer class="push">
     MAI COMMUNITIES
 </footer>
+
 </body>
 </html>
