@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <title>{{ community.title }}</title>
-</head>
-<body>
-<div class='wrapper'>
-    <header>
-        <div class="container">
-            Community details
-            <p><a href="{% url 'communities:community_list' %}">← List of MAI communities</a></p
-        </div>
-    </header>
-    <div class="content">
-        <div class="community">
-            <h3>{{ community.title }}</h3>
-            <p>{{ community.description }}</p>
-            <p><a href="{{ community.vk_link }}">{{ community.vk_link }}</a></p>
-            <p>{{ community.contacts }}</p>
-        </div>
-    </div>
-</div>
-<footer class="push">
-    MAI COMMUNITIES
-</footer>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}MAI COMMUNITY {{community.name}}{% endblock %}
+{% block description %}
+{{community.description}}
+{% endblock %}
+{% block content %}
+    {% include "community_card.html" %}
+{% endblock  %}
