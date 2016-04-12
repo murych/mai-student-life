@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <title>MAI COMMUNITIES</title>
-</head>
-<body>	
-	<div class='wrapper'>
-		<header>
-			<div  class="container">
-				List of MAI communities
-			</div>
-		</header>
-		<div class="content">
-			{% for community in community_list %}
-			<div class="community">
-				<br/>
-					<h3><a href="{% url 'communities:community_detail' community.pk %}">{{ community.title }}</a></h3>
-					<p>{{ community.description }}</p>
-					<p><a href="{{community.vk_link}}">{{ community.vk_link }}</a></p>
-					<p>{{ community.contacts }}</p>
-				<br/>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
-	<footer class="push">
-		MAI COMMUNITIES
-	</footer>
-</body>
-</html>
-
+{% extends "base.html" %}
+{% block title %}MAI COMMUNITIES{% endblock %}
+{% block description %}
+Curated list of MAI student communities.
+{% endblock %}
+{% block content %}
+<div class="communities-list">
+    {% for community in community_list %}
+    {% include "community_card.html" with com=community %}
+    {% endfor %}
+</div>
+{% include "pagination.html" with paginated_list=community_list %}
+{% endblock  %}
