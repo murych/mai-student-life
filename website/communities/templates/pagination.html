@@ -1,0 +1,19 @@
+{% if paginated_list.paginator.num_pages > 1 %}
+    <div class="pagination">
+        {% if paginated_lsit.has_previous %}
+            <a href="?page={{ paginated_list.previous_page_number }}">←</a>
+        {% endif %}
+        
+        {% for num in paginated_list.paginator.page_range %}
+            {% if num == paginated_list.number %}
+                <span class="current"><b>{{ num }}</b></span>
+            {% else %}
+                <a href="?page={{ num }}"> {{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if paginated_list.has_next %}
+            <a href="?page={{ paginated_list.next_page_number }}">→</a>
+        {% endif %}
+    </div>
+{% endif %}
