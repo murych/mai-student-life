@@ -1,0 +1,11 @@
+{% extends "website/base.html" %}
+{% block title %}About{% endblock %}
+{% block description %}
+    Something about us.
+{% endblock %}
+{% block navbar %}
+    {% include "website/navbar.html" with active_item="about" %}
+{% endblock %}
+{% block content %}
+    Something about us.
+{% endblock %}
