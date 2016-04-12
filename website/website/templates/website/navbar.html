@@ -1,0 +1,8 @@
+<ul class="nav nav-pills">
+    <li {% if active_item == 'communities' %}class="active"{% endif %}>
+        <a href="{% url 'community:list' %}">Communities</a>
+    </li>
+    <li {% if active_item == 'about' %}class="active"{% endif %}>
+        <a href="{% url 'about' %}">About</a>
+    </li>
+</ul>
