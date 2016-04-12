@@ -1,0 +1,6 @@
+<div class="community-card">
+    <h3><a href="{% url 'communities:community_detail' community.pk %}">{{ com.title }}</a></h3>
+    <p>{{ com.description }}</p>
+    <p><a href="{{ com.vk_link }}">{{ com.vk_link }}</a></p>
+    <p>{{ com.contacts }}</p>
+</div>
