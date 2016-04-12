@@ -4,7 +4,5 @@
 {{community.description}}
 {% endblock %}
 {% block content %}
-    {% include "community_card.html" %}
+{% include "community_card.html" with com=community %}
 {% endblock  %}
-
-<!-- TODO: community details page is just plain white -->
