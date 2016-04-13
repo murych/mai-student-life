@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block title %}About{% endblock %}
-<<<<<<< HEAD
-=======
-{% block description %}About MAI communities{% endblock %}
->>>>>>> 58ca9694b0874b0ff42429ced266aecb45ff8c4c
-{% block content %}
-Something about us.
-{% endblock  %}
