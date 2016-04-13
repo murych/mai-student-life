@@ -10,7 +10,7 @@ def index(request):
 
 def community_list(request):
     template_name = 'community_list.html'
-    paginator = Paginator(Community.objects.all(), 10)
+    paginator = Paginator(Community.objects.all(), 5)
 
     try:
         items = paginator.page(request.GET.get('page'))
