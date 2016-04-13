@@ -1,7 +1,7 @@
 {% if paginated_list.paginator.num_pages > 1 %}
     <div class="pagination">
         {% if paginated_list.has_previous %}
-            <a href="?page={{ paginated_list.previous_page_number }}">в†ђ</a>
+            <a href="?page={{ paginated_list.previous_page_number }}">←</a>
         {% endif %}
 
         {% for num in paginated_list.paginator.page_range %}
@@ -13,7 +13,7 @@
         {% endfor %}
 
         {% if paginated_list.has_next %}
-            <a href="?page={{ paginated_list.next_page_number }}">в†’</a>
+            <a href="?page={{ paginated_list.next_page_number }}">→</a>
         {% endif %}
     </div>
 {% endif %}
