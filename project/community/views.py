@@ -1,6 +1,5 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 
 from .models import *
 
@@ -14,10 +13,10 @@ def community_list(request):
     except (PageNotAnInteger, EmptyPage):
         items = paginator.page(1)
 
-    return render_to_response(template_name, RequestContext(request, {"community_list": items}))
+    return render(request, template_name, {"community_list": items})
 
 
 def detail(request, community_id):
     template_name = 'community/detail.html'
     community = Community.objects.get(pk=community_id)
-    return render_to_response(template_name, RequestContext(request, {"community": community}))
+    return render(request, template_name, {"community": community})

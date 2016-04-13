@@ -1,6 +1,5 @@
 from django.core.urlresolvers import reverse
-from django.shortcuts import render_to_response, redirect
-from django.template import RequestContext
+from django.shortcuts import render, redirect
 
 
 def index(request):
@@ -9,4 +8,4 @@ def index(request):
 
 def about(request):
     template_name = 'website/about.html'
-    return render_to_response(template_name, RequestContext(request))
+    return render(request, template_name)
