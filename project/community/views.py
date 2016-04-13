@@ -14,10 +14,10 @@ def community_list(request):
     except (PageNotAnInteger, EmptyPage):
         items = paginator.page(1)
 
-    return render_to_response(template_name, {"community_list": items}, context_instance=RequestContext(request))
+    return render_to_response(template_name, RequestContext(request, {"community_list": items}))
 
 
 def detail(request, community_id):
     template_name = 'community/detail.html'
     community = Community.objects.get(pk=community_id)
-    return render_to_response(template_name, {"community": community}, context_instance=RequestContext(request))
+    return render_to_response(template_name, RequestContext(request, {"community": community}))

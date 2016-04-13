@@ -9,4 +9,4 @@ def index(request):
 
 def about(request):
     template_name = 'website/about.html'
-    return render_to_response(template_name, context_instance=RequestContext(request))
+    return render_to_response(template_name, RequestContext(request))
