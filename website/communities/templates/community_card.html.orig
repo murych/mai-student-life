@@ -1,0 +1,13 @@
+<div class="community-card">
+<<<<<<< HEAD
+    <h3><a href="{% url 'communities:community_detail' community.pk %}">{{ com.title }}</a></h3>
+    <p>{{ com.description }}</p>
+    <p><a href="{{ com.vk_link }}">{{ com.vk_link }}</a></p>
+    <p>{{ com.contacts }}</p>
+=======
+    <h3><a href="{% url 'communities:community_detail' community.pk %}">{{ community.title }}</a></h3>
+    <p>{{ community.description }}</p>
+    <p><a href="{{ community.vk_link }}">{{ community.vk_link }}</a></p>
+    <p>{{ community.contacts }}</p>
+>>>>>>> 58ca9694b0874b0ff42429ced266aecb45ff8c4c
+</div>

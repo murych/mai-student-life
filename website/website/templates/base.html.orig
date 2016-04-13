@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<<<<<<< HEAD
+    {% load static %}
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet"></link>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+=======
+
+>>>>>>> 58ca9694b0874b0ff42429ced266aecb45ff8c4c
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+</head>
+<body>
+<header>
+    <div class="container navbar">
+        {% include "navbar.html" %}
+    </div>
+</header>
+<div>
+    <div class="container">
+        <div id="messages">
+
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+<footer class="push">
+    <div class="container">
+    </div>
+</footer>
+</body>
+</html>

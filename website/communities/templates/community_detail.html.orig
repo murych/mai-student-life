@@ -4,5 +4,9 @@
 {{community.description}}
 {% endblock %}
 {% block content %}
+<<<<<<< HEAD
+{% include "community_card.html" with com=community %}
+=======
     {% include "community_card.html" %}
+>>>>>>> 58ca9694b0874b0ff42429ced266aecb45ff8c4c
 {% endblock  %}

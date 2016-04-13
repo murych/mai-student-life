@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}MAI COMMUNITIES{% endblock %}
+{% block description %}
+Curated list of MAI student communities.
+{% endblock %}
+{% block content %}
+<div class="communities-list">
+    {% for community in community_list %}
+<<<<<<< HEAD
+    {% include "community_card.html" with com=community %}
+=======
+    {% include "community_card.html" %}
+>>>>>>> 58ca9694b0874b0ff42429ced266aecb45ff8c4c
+    {% endfor %}
+</div>
+{% include "pagination.html" with paginated_list=community_list %}
+{% endblock  %}
