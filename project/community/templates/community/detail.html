@@ -1,16 +1,12 @@
-{% extends "website/base.html" %}
+{% extends "common/base.html" %}
 
-{% block title %}MAI COMMUNITY {{ community.name }}{% endblock %}
+{% block title %}MAI COMMUNITY {{ community.title }}{% endblock %}
 
 {% block description %}
     {{ community.description }}
 {% endblock %}
 
-{% block pagetitle %}{{ community.name }}{% endblock %}
-
-{% block navbar %}
-    {% include "website/navbar.html" with active_item="communities" %}
-{% endblock %}
+{% block pagetitle %}{{ community.title }}{% endblock %}
 
 {% block content %}
     {% include "community/card.html" with com=community %}
