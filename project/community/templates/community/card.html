@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title"><a href="{% url 'community:detail' com.pk %}">{{ com.title }}</a></h2>
+    </div>
+    <div class="panel-body">
+        <div class="media">
+            <div class="media-left">
+                {% if com.logo %}
+                    <img src="{{ com.logo.url }}" class="community-logo"/>
+                {% endif %}
+            </div>
+            <div class="media-body">
+                {{ com.description }}
+            </div>
+        </div>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{{ com.vk_link }}">VK link</a></li>
+        <li class="list-group-item">{{ com.contacts }}</li>
+    </ul>
+</div>

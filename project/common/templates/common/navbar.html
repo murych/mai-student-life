@@ -1,0 +1,9 @@
+{% load mytags %}
+<ul class="nav nav-pills">
+    <li class="{% output_if_active 'active' 'community:list' %}">
+        <a href="{% url 'community:list' %}">Communities</a>
+    </li>
+    <li class="{% output_if_active 'active' 'common:about' %}">
+        <a href="{% url 'common:about' %}">About</a>
+    </li>
+</ul>
