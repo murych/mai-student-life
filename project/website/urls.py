@@ -22,6 +22,6 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^community/', include('community.urls')),
-                  url(r'^', include('common.urls')),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^community/', include('community.urls', namespace='community')),
+    url(r'^', include('common.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

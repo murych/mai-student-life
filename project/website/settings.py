@@ -41,7 +41,16 @@ INSTALLED_APPS = [
     'common',
     'community',
     'bootstrap3',
+    'rest_framework'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+       'rest_framework.permissions.AllowAny',
+    ),
+    'PAGE_SIZE': 10
+}
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
