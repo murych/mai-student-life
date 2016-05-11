@@ -13,3 +13,4 @@ class Community(models.Model):
     vk_link = models.CharField(max_length=100, default="")
     contacts = models.TextField(max_length=300, default="")
     community_type = models.CharField(max_length=3, default='reg', choices=COMMUNITY_TYPES)
+    logo = models.FileField(upload_to='community/logo', null=True, blank=True)
