@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {% load staticfiles %}
+    <link href="{% static "style.css" %}" rel="stylesheet">
+
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+</head>
+<body>
+<header>
+    <div class="container page-header">
+        <h2>{% block pagetitle %}{% endblock %}</h2>
+    </div>
+    <div class="container navbar">
+        {% include "common/navbar.html" %}
+    </div>
+</header>
+<div>
+    <div class="container">
+        <div id="messages">
+
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+<footer class="push">
+    <div class="container">
+    </div>
+</footer>
+</body>
+</html>

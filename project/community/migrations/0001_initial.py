@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -22,7 +21,8 @@ class Migration(migrations.Migration):
                 ('description', models.TextField(default='', max_length=500)),
                 ('vk_link', models.CharField(default='', max_length=100)),
                 ('contacts', models.TextField(default='', max_length=300)),
-                ('community_type', models.CharField(choices=[('reg', 'Regular'), ('hon', 'Honorary')], default='reg', max_length=3)),
+                ('community_type',
+                 models.CharField(choices=[('reg', 'Regular'), ('hon', 'Honorary')], default='reg', max_length=3)),
             ],
         ),
     ]
